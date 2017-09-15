@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ButtonsCollapseAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s9v-Ie-Uit"/>
+                        <viewControllerLayoutGuide type="bottom" id="3sF-zW-geb"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="w2Q-PX-JOb" userLabel="mainView">
+                                <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Bey-qq-XBv"/>
+                                    <constraint firstAttribute="width" constant="414" id="KYk-ay-BEZ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rg-R1-cEA">
+                                <rect key="frame" x="176" y="28" width="62" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYH-CH-Mct">
+                                        <rect key="frame" x="11" y="12" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="bp9-sP-N6b"/>
+                                            <constraint firstAttribute="height" constant="40" id="cf3-lD-xHN"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.075573097377470866" blue="0.14943419511635081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" backgroundImage="Down-Arrow-PNG-Clipart"/>
+                                        <connections>
+                                            <action selector="btnViewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dck-G3-rvj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.46997660024154592" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xYH-CH-Mct" firstAttribute="top" secondItem="1rg-R1-cEA" secondAttribute="top" constant="12" id="DwM-uq-l0w"/>
+                                    <constraint firstAttribute="width" constant="62" id="E7v-DM-9Gt"/>
+                                    <constraint firstAttribute="height" constant="64" id="fot-cC-CS1"/>
+                                    <constraint firstItem="xYH-CH-Mct" firstAttribute="leading" secondItem="1rg-R1-cEA" secondAttribute="leading" constant="11" id="xQ4-yE-ssL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="1rg-R1-cEA" firstAttribute="top" secondItem="s9v-Ie-Uit" secondAttribute="bottom" constant="8" symbolic="YES" id="1L2-ud-3IZ"/>
+                            <constraint firstItem="w2Q-PX-JOb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SjF-ec-oVg"/>
+                            <constraint firstItem="1rg-R1-cEA" firstAttribute="leading" secondItem="w2Q-PX-JOb" secondAttribute="leading" constant="175.66666666666666" id="UdX-8l-3Ms"/>
+                            <constraint firstItem="w2Q-PX-JOb" firstAttribute="top" secondItem="s9v-Ie-Uit" secondAttribute="bottom" constant="8" id="jol-nC-7hT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btn" destination="xYH-CH-Mct" id="gEO-TL-DEx"/>
+                        <outlet property="btnView" destination="1rg-R1-cEA" id="NYX-s8-U2C"/>
+                        <outlet property="mainView" destination="w2Q-PX-JOb" id="cjb-32-Mnt"/>
+                        <outlet property="superView" destination="8bC-Xf-vdC" id="MKw-xu-rNk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="110.14492753623189" y="114.94565217391305"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Down-Arrow-PNG-Clipart" width="512" height="512"/>
+    </resources>
 </document>
